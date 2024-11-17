@@ -30,6 +30,6 @@ jobs:
 
       # Step 5: Deploy to GitHub Pages  
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/portfolio
+        run: npx angular-cli-ghpages --dir=dist/browser
         env:
           GH_TOKEN: ${{ secrets.TOKEN }}
