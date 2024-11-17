@@ -22,7 +22,7 @@ jobs:
         run: npm install && npm run build:prod
 
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=./browser
+        run: npx angular-cli-ghpages --dir=./browser --branch=deploy
         env:
           GH_TOKEN: ${{ secrets.TOKEN }}
 
