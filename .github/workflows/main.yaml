@@ -22,11 +22,9 @@ jobs:
         run: npm install && npm run build:prod
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: ./browser
-          branch: deploy
-          token: ${{ secrets.TOKEN }}
+        run: npx angular-cli-ghpages --dir=./browser
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
 
       - name: Delete old workflow runs
         uses: Mattraks/delete-workflow-runs@v2
