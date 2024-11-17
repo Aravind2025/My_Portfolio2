@@ -9,23 +9,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout Code
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Step 2: Set up Node.js Environment
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
+      # Step 3: Install Dependencies and Build Angular App
       - name: Build Angular app to prod
         working-directory: .
-        run: npm install && npm run build:prod
+        run: |
+          npm install
+          npm run build -- --base-href=/My_Portfolio/
 
+      # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=./browser
+        run: npx angular-cli-ghpages --dir=./browser --no-silent
         env:
           GH_TOKEN: ${{ secrets.TOKEN }}
 
+      # Step 5: Delete Old Workflow Runs
       - name: Delete old workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
