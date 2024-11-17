@@ -32,6 +32,6 @@ jobs:
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ secrets.TOKEN }}
-          repository: SebastianoFazzino/my-portfolio
+          repository: Aravind2025/My_Portfolio
           retain_days: 10
           keep_minimum_runs: 5
