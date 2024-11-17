@@ -24,7 +24,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ./browser
+          folder: ./My_Portfolio/browser
           branch: deploy
           token: ${{ secrets.TOKEN }}
 
