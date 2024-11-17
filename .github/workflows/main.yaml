@@ -3,7 +3,7 @@ name: Angular Build and Deploy
 on:
   push:
     branches:
-      - mast
+      - master
 
 jobs:
   build:
@@ -30,6 +30,6 @@ jobs:
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ secrets.TOKEN }}
-          repository: Aravind2025/My_Portfolio
+          repository: Aravind2025/My_Portfolio2
           retain_days: 10
           keep_minimum_runs: 5
