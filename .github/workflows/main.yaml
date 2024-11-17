@@ -24,7 +24,7 @@ jobs:
         working-directory: .
         run: |
           npm install
-          npm run build -- --base-href=/My_Portfolio/
+          npm run build -- --base-href=/My_Portfolio2/
 
       # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
